@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <title>Background Images</title>
-
 <style>
+body {padding:40px; font-family: Calibri, "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+a {color: #6EAB23;}
+p#footer {color: #999;}
+
 div {
 	margin-bottom: 20px;
 }
@@ -36,15 +39,17 @@ div {
 <body>
 
 <h1>Outline or remove CSS background images</h1>
+
+<p><a href="#" id="link-outline">Outline elements with background images</a> or use the bookmarklet: <a href="javascript:(function(){var tags=document.getElementsByTagName('*');var element;for(var i=0;i<tags.length;i++){element=tags[i];if(element.currentStyle){if(element.currentStyle['backgroundImage']!=='none')element.style.outline='2px solid #f00';}else if(window.getComputedStyle){if(document.defaultView.getComputedStyle(element,null).getPropertyValue('background-image')!=='none')element.style.outline='2px solid #f00';}}})();">Outline CSS Background Images</a></p>
+
+<p><a href="#" id="link-remove">Remove background images</a> or use the bookmarklet: <a href="javascript:(function(){var tags=document.getElementsByTagName('*');var element;for(var i=0;i<tags.length;i++){element=tags[i];if(element.currentStyle){if(element.currentStyle['backgroundImage']!=='none')element.style.backgroundImage='none';}else if(window.getComputedStyle){if(document.defaultView.getComputedStyle(element,null).getPropertyValue('background-image')!=='none')element.style.backgroundImage='none';}}})();">Remove CSS Background Images</a></p>
+
+<p id="footer"><a href="http://zomigi.com/blog/bookmarklets-for-accessibility-testing/">Read the article</a> that this test page is related to.</p>
 <div class="one">This div has a background image</div>
 <div class="two" style="background-image:url(images/kitten.jpg)">This div has an inline background image</div>
 <div class="three">This div has a foreground image<img src="images/kitten.jpg" alt="kitten" width="300" height="180"></div>
 <p class="four">This paragraph has a background image, <a href="#" class="five">link with background image</a>, and <a href="#">link with foreground image <img src="images/plus.png" width="20" height="19" alt="plus"></a></p>
 <p class="six">This paragraph just has a background color.</p>
-
-<p><a href="#" id="link-outline">Outline elements with background images</a> or use the bookmarklet: <a href="javascript:(function(){var tags=document.getElementsByTagName('*');var element;for(var i=0;i<tags.length;i++){element=tags[i];if(element.currentStyle){if(element.currentStyle['backgroundImage']!=='none')element.style.outline='2px solid #f00';}else if(window.getComputedStyle){if(document.defaultView.getComputedStyle(element,null).getPropertyValue('background-image')!=='none')element.style.outline='2px solid #f00';}}})();">Outline CSS Background Images</a></p>
-
-<p><a href="#" id="link-remove">Remove background images</a> or use the bookmarklet: <a href="javascript:(function(){var tags=document.getElementsByTagName('*');var element;for(var i=0;i<tags.length;i++){element=tags[i];if(element.currentStyle){if(element.currentStyle['backgroundImage']!=='none')element.style.backgroundImage='none';}else if(window.getComputedStyle){if(document.defaultView.getComputedStyle(element,null).getPropertyValue('background-image')!=='none')element.style.backgroundImage='none';}}})();">Remove CSS Background Images</a></p>
 
 <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script><!-- jQuery only used on in-page demo links, not bookmarklet links -->
 <script type="text/javascript" src="scripts/bg-imgs_remove_outline.js"></script>
